@@ -6,7 +6,7 @@ const countryElement = document.getElementById("country");
 const weatherForecastElement = document.getElementById("weather-forecast");
 const currentTemperatureElement = document.getElementById("current-temp");
 
-const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const apiKey = 'AIzaSyBSAeovYooh8_fM6A6VVDyzNqndjmow8Dk'; // google apikey
 const API_KEY = "72beca5fe6c3af85599e365245708d4e";//open weather map apikey
@@ -22,7 +22,7 @@ setInterval(() => {
     const hour = time.getHours();
     const minutes = time.getMinutes();
 
-    timeElement.innerHTML = (hour < 10 ? "0" + hour : hour) + ":" + (minutes < 10 ? "0"+minutes : minutes);
+    timeElement.innerHTML = (hour < 10 ? "0" + hour : hour) + ":" + (minutes < 10 ? "0" + minutes : minutes);
     dateElement.innerHTML = days[day] + ", " + date + " " + months[month];
 }, 1000);
 
@@ -52,7 +52,7 @@ function getWeatherData() {
 }
 
 function getLocation(city, country) {
-    timeZone.innerHTML = country + "/" + city;
+    timeZone.innerHTML = country + " / " + city;
 }
 
 function showWeatherData (data) {
